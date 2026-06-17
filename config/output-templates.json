@@ -1,0 +1,24 @@
+{
+  "cet-standard": {
+    "name": "四六级标准模板",
+    "description": "适用于 CET-4/CET-6 真题的清洗输出格式",
+    "header": "# {examName} — {date}\n\n> 来源: {sourceFile} | 清洗日期: {cleanDate}\n\n",
+    "section": "## {sectionName}\n\n",
+    "question": "### 题目 {index} [{questionType}]\n\n{content}\n\n",
+    "options": "{label}. {text}\n\n",
+    "answer": "**答案:** {answer}\n\n",
+    "analysis": "**解析:** {analysis}\n\n",
+    "footer": "\n---\n*由题库清洗手术台自动生成*\n"
+  },
+  "kaoyan-standard": {
+    "name": "考研英语标准模板",
+    "description": "适用于考研英语真题的清洗输出格式",
+    "header": "# {examName} — {date}\n\n> 来源: {sourceFile}\n\n",
+    "section": "## {sectionName}\n\n",
+    "question": "### [{index}] {content}\n\n",
+    "options": "({label}) {text}\n\n",
+    "answer": "**答案:** {answer}\n\n",
+    "analysis": "**解析:** {analysis}\n\n",
+    "footer": "\n---\n"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "cet4": [
+    { "pattern": "^Section\\s+[A-C]", "flags": "mi", "questionType": "section", "priority": 0 },
+    { "pattern": "^(\\d+)[.、]\\s*", "flags": "m", "questionType": "choice", "priority": 1 },
+    { "pattern": "^Part\\s+(I{1,3}|IV|V)", "flags": "mi", "questionType": "section", "priority": 0 },
+    { "pattern": "^(Passage|Text)\\s+\\d", "flags": "mi", "questionType": "section", "priority": 0 }
+  ],
+  "cet6": [
+    { "pattern": "^Section\\s+[A-C]", "flags": "mi", "questionType": "section", "priority": 0 },
+    { "pattern": "^(\\d+)[.、]\\s*", "flags": "m", "questionType": "choice", "priority": 1 },
+    { "pattern": "^Part\\s+(I{1,3}|IV|V)", "flags": "mi", "questionType": "section", "priority": 0 }
+  ],
+  "kaoyan": [
+    { "pattern": "^Section\\s+[IIV]{1,3}", "flags": "mi", "questionType": "section", "priority": 0 },
+    { "pattern": "^(\\d+)[.、]\\s*", "flags": "m", "questionType": "choice", "priority": 1 },
+    { "pattern": "^Text\\s+\\d", "flags": "mi", "questionType": "section", "priority": 0 }
+  ],
+  "questions-only": [
+    { "pattern": "^(\\d+)[.、]\\s*", "flags": "m", "questionType": "choice", "priority": 1 },
+    { "pattern": "^Section\\s+[A-C]", "flags": "mi", "questionType": "section", "priority": 0 },
+    { "pattern": "^Part\\s+(I{1,3}|IV|V)", "flags": "mi", "questionType": "section", "priority": 0 }
+  ],
+  "analysis-only": [
+    { "pattern": "^(参考范文|答案|解析|[A-D][)）])\\s*", "flags": "m", "questionType": "analysis", "priority": 1 },
+    { "pattern": "^(\\d+)[.、]\\s*", "flags": "m", "questionType": "choice", "priority": 2 },
+    { "pattern": "^Part\\s+(I{1,3}|IV|V)", "flags": "mi", "questionType": "section", "priority": 0 }
+  ],
+  "anchor-split": [
+    { "pattern": "^Part\\s+(I{1,3}|IV|V)", "flags": "mi", "questionType": "section", "priority": 0 },
+    { "pattern": "^(\\d+)[.、]\\s*", "flags": "m", "questionType": "choice", "priority": 1 },
+    { "pattern": "(解析|答案|Answer|Key|Explanation)", "flags": "i", "questionType": "analysis", "priority": 2 }
+  ],
+  "multi-set": [
+    { "pattern": "^Part\\s+(I{1,3}|IV|V)", "flags": "mi", "questionType": "section", "priority": 0 },
+    { "pattern": "^(\\d+)[.、]\\s*", "flags": "m", "questionType": "choice", "priority": 1 }
+  ]
+}

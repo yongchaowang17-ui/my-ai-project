@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cet4",
+    "name": "大学英语四级（CET-4）",
+    "description": "全国大学英语四级考试真题",
+    "sections": [
+      { "id": "writing", "name": "写作", "questionTypes": ["writing"] },
+      { "id": "listening", "name": "听力理解", "questionTypes": ["listening"] },
+      { "id": "reading-carefully", "name": "仔细阅读", "questionTypes": ["choice"] },
+      { "id": "reading-matching", "name": "长篇阅读/信息匹配", "questionTypes": ["reading"] },
+      { "id": "reading-skimming", "name": "选词填空", "questionTypes": ["fill"] },
+      { "id": "translation", "name": "翻译", "questionTypes": ["translate"] }
+    ],
+    "splitRules": "cet4",
+    "outputTemplate": "cet-standard"
+  },
+  {
+    "id": "cet6",
+    "name": "大学英语六级（CET-6）",
+    "description": "全国大学英语六级考试真题",
+    "sections": [
+      { "id": "writing", "name": "写作", "questionTypes": ["writing"] },
+      { "id": "listening", "name": "听力理解", "questionTypes": ["listening"] },
+      { "id": "reading-carefully", "name": "仔细阅读", "questionTypes": ["choice"] },
+      { "id": "reading-matching", "name": "长篇阅读/信息匹配", "questionTypes": ["reading"] },
+      { "id": "reading-skimming", "name": "选词填空", "questionTypes": ["fill"] },
+      { "id": "translation", "name": "翻译", "questionTypes": ["translate"] }
+    ],
+    "splitRules": "cet6",
+    "outputTemplate": "cet-standard"
+  },
+  {
+    "id": "kaoyan-english",
+    "name": "考研英语",
+    "description": "全国硕士研究生入学统一考试英语试题",
+    "sections": [
+      { "id": "writing", "name": "写作", "questionTypes": ["writing"] },
+      { "id": "reading", "name": "阅读理解", "questionTypes": ["choice", "reading"] },
+      { "id": "translation", "name": "翻译", "questionTypes": ["translate"] }
+    ],
+    "splitRules": "kaoyan",
+    "outputTemplate": "kaoyan-standard"
+  }
+]

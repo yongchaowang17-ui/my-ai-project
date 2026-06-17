@@ -1,0 +1,43 @@
+﻿node_modules/
+.next/
+out/
+.env
+.env.local
+*.tsbuildinfo
+next-env.d.ts
+data/.trash/
+.npm-cache/
+
+# Large data directories (backup separately)
+data/02_Working_Area/
+data/03_Exam_Final/
+data/04_Fusion_Area/
+data/05_Synthesis_Area/
+data/04.5_Decomposed/
+data/raw/
+data/routing/
+data/tasks/
+data/_mineru_output/
+data/新建文件夹/
+data/*.pdf
+data/*.json
+data/*.md
+
+# Root-level data assets
+03_Exam_Final/
+
+# Log files
+*.log
+
+# Script artifacts
+check_ports.ps1
+fix-layout.js
+start-dev.bat
+start-server.bat
+dev-err.log
+dev-out.log
+dev-server.log
+next-server.log
+server-err.log
+server-out.log
+sub-question-decompose-design.md

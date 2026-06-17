@@ -1,0 +1,30 @@
+{
+  "raw_questions": {
+    "label": "纯题目",
+    "splitProfile": "questions-only",
+    "description": "仅含题目的文件，应用快速题型切分",
+    "icon": "FileText",
+    "color": "blue"
+  },
+  "raw_analysis": {
+    "label": "纯解析",
+    "splitProfile": "analysis-only",
+    "description": "仅含解析的文件，应用答案对齐提取",
+    "icon": "BookOpen",
+    "color": "green"
+  },
+  "mixed": {
+    "label": "混合卷",
+    "splitProfile": "anchor-split",
+    "description": "题目+解析混合文件，应用锚点切分",
+    "icon": "Layers",
+    "color": "amber"
+  },
+  "multi_set": {
+    "label": "多套卷",
+    "splitProfile": "multi-set",
+    "description": "包含多套试卷的合并文件",
+    "icon": "Files",
+    "color": "purple"
+  }
+}
