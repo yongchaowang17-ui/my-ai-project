@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 04_Fusion_Area -> 04.5_Decomposed 子题拆解引擎
  *
  * 将 Part 级文件按 Section/Passage 边界拆解为子题型文件。

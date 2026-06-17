@@ -41,3 +41,6 @@ next-server.log
 server-err.log
 server-out.log
 sub-question-decompose-design.md
+data/05_Synthesis_Area_backup/
+*.md
+!docs/*.md

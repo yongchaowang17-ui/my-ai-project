@@ -1,4 +1,4 @@
-﻿/**
+/**
  * POST /api/decompose/sub-question/preview
  *
  * 扫描 04_Fusion_Area，返回每个 Part 的子题拆解预览（不写入磁盘）

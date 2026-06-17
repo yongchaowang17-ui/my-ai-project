@@ -1,4 +1,4 @@
-﻿/**
+/**
  * File System Safety Layer
  *
  * All fs operations go through this layer:

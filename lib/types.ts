@@ -1,4 +1,4 @@
-﻿// ===== 鐩綍鏍?=====
+// ===== 鐩綍鏍?=====
 export interface FileTreeNode {
   name: string;
   path: string;            // 鐩稿浜?data/ 鐨勮矾寰?  type: 'file' | 'directory';
