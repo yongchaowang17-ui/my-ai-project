@@ -1,4 +1,4 @@
-/**
+﻿/**
  * File System Safety Layer
  *
  * All fs operations go through this layer:
@@ -22,6 +22,7 @@ const TRASH_DIR = path.join(DATA_ROOT, '.trash');
 const FINAL_ROOT = path.join(DATA_ROOT, '03_Exam_Final');
 const FUSION_ROOT = path.join(DATA_ROOT, '04_Fusion_Area');
 const SYNTHESIS_ROOT = path.join(DATA_ROOT, '05_Synthesis_Area');
+const DECOMPOSED_ROOT = path.join(DATA_ROOT, '04.5_Decomposed');
 const IGNORED_NAMES = new Set(['.trash', '.git', 'node_modules', '.next', '.npm-cache']);
 
 // ===== Path Safety =====
@@ -37,6 +38,7 @@ export function safePath(relativePath: string): string {
     && !resolved.startsWith(FINAL_ROOT)
     && !resolved.startsWith(FUSION_ROOT)
     && !resolved.startsWith(SYNTHESIS_ROOT)
+    && !resolved.startsWith(DECOMPOSED_ROOT)
   ) {
     throw new PathSecurityError('Path outside workspace: ' + relativePath);
   }
@@ -195,4 +197,5 @@ export function createExamSetDirs(setId: string): void {
   fs.mkdirSync(path.join(WORKSPACE_ROOT, setId, 'Analysis'), { recursive: true });
 }
 
-export { WORKSPACE_ROOT, ROUTING_ROOT, DATA_ROOT, FINAL_ROOT, FUSION_ROOT, SYNTHESIS_ROOT };
+export { WORKSPACE_ROOT, ROUTING_ROOT, DATA_ROOT, FINAL_ROOT, FUSION_ROOT, SYNTHESIS_ROOT, DECOMPOSED_ROOT };
+

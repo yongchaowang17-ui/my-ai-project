@@ -1,0 +1,81 @@
+﻿{
+  "listening": {
+    "SectionA": {
+      "label": "新闻报道",
+      "subType": "news",
+      "boundaries": [
+        "^News\\s*Report\\s*\\d",
+        "^News\\s+\\d",
+        "^\\d+\\.\\s+News",
+        "^Section\\s*A"
+      ],
+      "count": 3
+    },
+    "SectionB": {
+      "label": "长对话",
+      "subType": "conversation",
+      "boundaries": [
+        "^Conversation\\s*\\d",
+        "^Dialogue\\s*\\d",
+        "^长对话\\s*\\d",
+        "^\\d+\\.\\s+Conversation",
+        "^Section\\s*B"
+      ],
+      "count": 2
+    },
+    "SectionC": {
+      "label": "短文/讲座",
+      "subType": "passage",
+      "boundaries": [
+        "^Passage\\s*\\d",
+        "^Passage\\s+(One|Two|Three|Four|Five)",
+        "^短文\\s*\\d",
+        "^Lecture\\s*\\d",
+        "^Section\\s*C"
+      ],
+      "count": 3
+    }
+  },
+  "reading": {
+    "SectionA": {
+      "label": "选词填空",
+      "subType": "bankCloze",
+      "boundaries": ["^Section\\s*A"],
+      "count": 1
+    },
+    "SectionB": {
+      "label": "信息匹配",
+      "subType": "matching",
+      "boundaries": ["^Section\\s*B"],
+      "count": 1
+    },
+    "SectionC": {
+      "label": "仔细阅读",
+      "subType": "passage",
+      "boundaries": [
+        "^Section\\s*C",
+        "^Passage\\s+(One|Two|Three|Four|Five)",
+        "^Passage\\s*\\d",
+        "^Passage\\s+One",
+        "^Passage\\s+Two"
+      ],
+      "count": 2
+    }
+  },
+  "writing": {
+    "_default": {
+      "label": "写作",
+      "subType": "writing",
+      "boundaries": [],
+      "count": 1
+    }
+  },
+  "translation": {
+    "_default": {
+      "label": "翻译",
+      "subType": "translation",
+      "boundaries": [],
+      "count": 1
+    }
+  }
+}

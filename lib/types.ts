@@ -1,15 +1,14 @@
-// ===== 目录树 =====
+﻿// ===== 鐩綍鏍?=====
 export interface FileTreeNode {
   name: string;
-  path: string;            // 相对于 data/ 的路径
-  type: 'file' | 'directory';
+  path: string;            // 鐩稿浜?data/ 鐨勮矾寰?  type: 'file' | 'directory';
   children?: FileTreeNode[];
   size?: number;
   lastModified?: string;
   extension?: string;
 }
 
-// ===== 文件内容 =====
+// ===== 鏂囦欢鍐呭 =====
 export interface FileContent {
   path: string;
   name: string;
@@ -17,16 +16,14 @@ export interface FileContent {
   encoding: string;
   size: number;
   lastModified: string;
-  checksum: string;         // SHA-256 前 16 位，用于乐观锁
-}
+  checksum: string;         // SHA-256 鍓?16 浣嶏紝鐢ㄤ簬涔愯閿?}
 
-// ===== 文件写入请求 =====
+// ===== 鏂囦欢鍐欏叆璇锋眰 =====
 export interface FileWriteRequest {
   content: string;
-  checksum?: string;        // PUT 时必填，POST 时可选
-}
+  checksum?: string;        // PUT 鏃跺繀濉紝POST 鏃跺彲閫?}
 
-// ===== 题目结构 =====
+// ===== 棰樼洰缁撴瀯 =====
 export interface Question {
   id: string;
   type:
@@ -55,7 +52,7 @@ export interface QuestionMetadata {
   updatedAt: string;
 }
 
-// ===== 批注标记 =====
+// ===== 鎵规敞鏍囪 =====
 export interface AnnotationFlag {
   id: string;
   type: 'error' | 'warning' | 'note' | 'todo' | 'review';
@@ -65,7 +62,7 @@ export interface AnnotationFlag {
   createdAt: string;
 }
 
-// ===== 考试配置 =====
+// ===== 鑰冭瘯閰嶇疆 =====
 export interface ExamTypeConfig {
   id: string;
   name: string;
@@ -88,7 +85,7 @@ export interface SplitRule {
   priority: number;
 }
 
-// ===== 套卷对齐状态 =====
+// ===== 濂楀嵎瀵归綈鐘舵€?=====
 export interface AlignmentStatus {
   setId: string;
   questionFiles: string[];
@@ -105,7 +102,7 @@ export interface AlignmentStatus {
   isFullyAligned: boolean;
 }
 
-// ===== 命名校验结果 =====
+// ===== 鍛藉悕鏍￠獙缁撴灉 =====
 export interface NamingValidation {
   valid: boolean;
   error?: string;
@@ -118,7 +115,7 @@ export interface NamingValidation {
   };
 }
 
-// ===== 配对文件信息 =====
+// ===== 閰嶅鏂囦欢淇℃伅 =====
 export interface PairedFileInfo {
   currentFile: string;
   pairedFile: string | null;
@@ -126,32 +123,61 @@ export interface PairedFileInfo {
   exists: boolean;
 }
 
-// ===== API 响应 =====
+// ===== API 鍝嶅簲 =====
 export interface ApiResponse<T> {
   success: boolean;
   data?: T;
   error?: string;
 }
 
-// ===== 批量预拆解 Pipeline =====
+// ===== 鎵归噺棰勬媶瑙?Pipeline =====
 
-/** 单个拆解块 */
+/** 鍗曚釜鎷嗚В鍧?*/
 export interface ProposedBlock {
-  id: string;                   // 唯一标识符（dnd-kit 拖拽用）
-  type: string;                 // Question 或 Analysis
-  lineRange: [number, number];  // 1-based, 含首尾行
-  title: string;                // 该块首行标题
-  content: string;              // 该块原始文本
-  confidence: number;           // 0-1, 正则为 1.0
+  id: string;                   // 鍞竴鏍囪瘑绗︼紙dnd-kit 鎷栨嫿鐢級
+  type: string;                 // Question 鎴?Analysis
+  lineRange: [number, number];  // 1-based, 鍚灏捐
+  title: string;                // 璇ュ潡棣栬鏍囬
+  content: string;              // 璇ュ潡鍘熷鏂囨湰
+  confidence: number;           // 0-1, 姝ｅ垯涓?1.0
 }
 
-/** 批量扫描任务 */
+/** 鎵归噺鎵弿浠诲姟 */
 export interface SplitTask {
-  id: string;                   // 源文件名（去扩展名）
+  id: string;                   // 婧愭枃浠跺悕锛堝幓鎵╁睍鍚嶏級
   sourcePath: string;           // routing/mixed/xxx.md
   examType: string;             // cet4/cet6/kaoyan
   proposedBlocks: ProposedBlock[];
-  scanMethod: string;           // regex 或 llm
+  scanMethod: string;           // regex 鎴?llm
   status: string;               // pending/reviewed/flagged/committed
   createdAt: string;
+}
+// ===== 子题拆解 (04.5 Decomposed) =====
+
+export interface SubSection {
+  id: string;                // e.g. "ScA_News1", "ScC_P1"
+  subject: string;           // 听力 / 阅读 / 写作 / 翻译
+  sectionFolder: string;     // SectionA / SectionB / SectionC / "" (写作/翻译无子目录)
+  filename: string;          // e.g. "CET4_2024_06_S1_News1.md"
+  setId: string;
+  examType: string;          // CET4 / CET6
+  partIndex: number;
+  partName: string;
+  sectionIndex?: string;     // A / B / C
+  sectionName?: string;
+  subType: string;           // news / conversation / passage / bankCloze / matching / writing / translation
+  subIndex: number;
+  content: string;           // 合并后的题目+解析
+  sourceQuestionPath: string;
+  sourceAnalysisPath: string | null;
+  status: 'pending' | 'approved' | 'rejected';
+}
+
+export interface SubDecomposePreview {
+  setId: string;
+  examType: string;
+  sections: SubSection[];
+  totalSections: number;
+  status: 'ready' | 'partial' | 'error';
+  errorMsg?: string;
 }
